@@ -1,0 +1,2 @@
+openfortivpn/files/secrets/*
+!openfortivpn/files/secrets/.gitkeep
