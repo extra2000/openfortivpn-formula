@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
+---
+Debian:
+  pkg:
+    openssl_devel:
+      name: libssl-dev
+    pkgconfig:
+      name: pkg-config
+
+RedHat:
+  pkg:
+    openssl_devel:
+      name: openssl-devel
+    pkgconfig:
+      name: pkgconfig

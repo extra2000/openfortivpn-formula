@@ -1,0 +1,5 @@
+host = {{ pillar['openfortivpn']['server']['host'] }}
+port = {{ pillar['openfortivpn']['server']['port'] }}
+user-cert = /srv/{{ pillar['openfortivpn']['certificate']['crtfile'] }}
+user-key = /srv/{{ pillar['openfortivpn']['certificate']['keyfile'] }}
+trusted-cert = {{ pillar['openfortivpn']['server']['certdigest'] }}
