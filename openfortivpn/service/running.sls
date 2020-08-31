@@ -4,4 +4,4 @@
 openfortivpn-client-service-running:
   service.running:
     - name: openfortivpn@client.service
-    - enable: true
+    - enable: false
