@@ -2,19 +2,13 @@
 # vim: ft=sls
 
 openfortivpn-crtfile-absent:
-  file.managed:
+  file.absent:
     - name: /srv/{{ pillar['openfortivpn']['certificate']['crtfile'] }}
 
 openfortivpn-keyfile-absent:
-  file.managed:
+  file.absent:
     - name: /srv/{{ pillar['openfortivpn']['certificate']['keyfile'] }}
 
-openfortivpn-systemd-script-absent:
-  file.managed:
-    - name: /lib/systemd/system/openfortivpn.service
-
-systemd-reload:
-  cmd.run:
-   - name: systemctl daemon-reload
-   - onchanges:
-     - file: /lib/systemd/system/openfortivpn.service
+openfortivpn-client-conf-absent:
+  file.absent:
+    - name: /etc/openfortivpn/client.conf
