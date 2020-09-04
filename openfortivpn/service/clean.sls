@@ -12,3 +12,13 @@ openfortivpn-client-service-dead:
 openfortivpn-credentials-dir-absent:
   file.absent:
     - name: /openfortivpn-credentials
+
+{% for src_ipaddr in salt['pillar.get']('openfortivpn:masquerade') %}
+openfortivpn-nat-rule-{{ loop.index }}-absent:
+  iptables.delete:
+    - table: nat
+    - chain: POSTROUTING
+    - source: {{ src_ipaddr }}
+    - jump: MASQUERADE
+    - save: false
+{% endfor %}

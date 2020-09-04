@@ -35,3 +35,17 @@ openfortivpn-client-service-running:
       - mount: /openfortivpn-credentials
       - file: openfortivpn-crtfile-present
       - file: openfortivpn-keyfile-present
+
+{% for src_ipaddr in salt['pillar.get']('openfortivpn:masquerade') %}
+openfortivpn-nat-rule-{{ loop.index }}-present:
+  iptables.append:
+    - table: nat
+    - chain: POSTROUTING
+    - source: {{ src_ipaddr }}
+    - jump: MASQUERADE
+    - save: false
+{% endfor %}
+
+net.ipv4.ip_forward:
+  sysctl.present:
+    - value: 1
