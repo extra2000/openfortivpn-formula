@@ -23,9 +23,9 @@ openfortivpn-build-prerequisites:
   file.directory:
     - user: {{ pillar['openfortivpn']['build']['username'] }}
 
-https://github.com/adrienverge/openfortivpn.git:
+https://github.com/extra2000/openfortivpn-src.git:
   git.detached:
-    - rev: v1.14.1
+    - rev: restart-on-failure
     - target: /opt/openfortivpn-src
     - user: {{ pillar['openfortivpn']['build']['username'] }}
 
