@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.3](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.2...v1.1.3) (2020-09-26)
+
+
+### Continuous Integrations
+
+* **travis:** Add Slack notifications ([b983493](https://github.com/extra2000/openfortivpn-formula/commit/b98349325b0af92b3259183973c13db4fa188ffa))
+
 ### [1.1.2](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.1...v1.1.2) (2020-09-26)
 
 
