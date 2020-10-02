@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.6](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.5...v1.1.6) (2020-10-02)
+
+
+### Continuous Integrations
+
+* **semantic-release:** Add fix type ([00fb879](https://github.com/extra2000/openfortivpn-formula/commit/00fb87985a70207a53cdef3d70d75e3f2e8a1da0))
+
 ### [1.1.5](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.4...v1.1.5) (2020-10-01)
 
 
