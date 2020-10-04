@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.7](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.6...v1.1.7) (2020-10-04)
+
+
+### Continuous Integrations
+
+* **semantic-release:** Fix patch updates with BREAKING CHANGE doesn't trigger major release ([cd73828](https://github.com/extra2000/openfortivpn-formula/commit/cd738287bb3ed58cf4e28a51187d172379d285ef))
+
 ### [1.1.6](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.5...v1.1.6) (2020-10-02)
 
 
