@@ -1,5 +1,17 @@
 # Changelog
 
+### [1.1.8-alpha.1](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.7...v1.1.8-alpha.1) (2020-10-27)
+
+
+### Documentations
+
+* **README:** Fix Travis CI badge URL ([db0b744](https://github.com/extra2000/openfortivpn-formula/commit/db0b744c9149fbba72f2b2fb48925d8ca3ed70cd))
+
+
+### Code Refactoring
+
+* **package.install:** Change openfortivpn branch to [PPP exit status code](https://github.com/adrienverge/openfortivpn/pull/798) patch ([acd7700](https://github.com/extra2000/openfortivpn-formula/commit/acd77002bb179cab1ece44c764c4db861b634371))
+
 ### [1.1.7](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.6...v1.1.7) (2020-10-04)
 
 
