@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.0.0](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.7...v2.0.0) (2021-05-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Pillar format has changed.
+
+### Documentations
+
+* **README:** Change CI badge from Travis CI to AppVeyor ([d9b0cee](https://github.com/extra2000/openfortivpn-formula/commit/d9b0ceee295c72e2f1836f521917845b19a77c4e))
+
+
+### Code Refactoring
+
+* Restructure SaltStack sls files ([50f25be](https://github.com/extra2000/openfortivpn-formula/commit/50f25beaac568925b6d4d6c4fae11ca72b59473a))
+* **package.install:** Change to original openfortivpn repository ([c4e0dc4](https://github.com/extra2000/openfortivpn-formula/commit/c4e0dc46828911aa36da55ce00f09a15f1888359))
+
+
+### Continuous Integrations
+
+* Replace Travis CI with AppVeyor ([dd01d21](https://github.com/extra2000/openfortivpn-formula/commit/dd01d2117e23f2c43c36b0c359b1befa7b20376e))
+
 ### [1.1.7](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.6...v1.1.7) (2020-10-04)
 
 
