@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{% from "openfortivpn/map.jinja" import openfortivpn with context %}
+{%- set tplroot = tpldir.split('/')[0] %}
+{%- from tplroot ~ "/map.jinja" import OPENFORTIVPN with context %}
 
 openfortivpn-prerequisites:
   pkg.installed:
@@ -15,19 +16,19 @@ openfortivpn-build-prerequisites:
       - gcc
       - automake
       - autoconf
-      - {{ openfortivpn.pkg.openssl_devel.name }}
+      - {{ OPENFORTIVPN.pkg.openssl_devel.name }}
       - make
-      - {{ openfortivpn.pkg.pkgconfig.name }}
+      - {{ OPENFORTIVPN.pkg.pkgconfig.name }}
 
 /opt/openfortivpn-src:
   file.directory:
-    - user: {{ pillar['openfortivpn']['build']['username'] }}
+    - user: {{ OPENFORTIVPN.build.username }}
 
 https://github.com/adrienverge/openfortivpn.git:
   git.detached:
     - rev: master
     - target: /opt/openfortivpn-src
-    - user: {{ pillar['openfortivpn']['build']['username'] }}
+    - user: {{ OPENFORTIVPN.build.username }}
 
 openfortivpn-build-and-install:
   cmd.run:
@@ -37,4 +38,4 @@ openfortivpn-build-and-install:
         make
         sudo make install
     - cwd: /opt/openfortivpn-src
-    - runas: {{ pillar['openfortivpn']['build']['username'] }}
+    - runas: {{ OPENFORTIVPN.build.username }}

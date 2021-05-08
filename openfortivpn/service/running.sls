@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
+{%- set tplroot = tpldir.split('/')[0] %}
+{%- from tplroot ~ "/map.jinja" import OPENFORTIVPN with context %}
+
 /openfortivpn-credentials:
   mount.mounted:
     - device: tmpfs
@@ -11,8 +14,8 @@
 
 openfortivpn-crtfile-present:
   file.managed:
-    - name: /openfortivpn-credentials/{{ pillar['openfortivpn']['certificate']['crtfile'] }}
-    - source: salt://openfortivpn/files/secrets/{{ pillar['openfortivpn']['certificate']['crtfile'] }}
+    - name: /openfortivpn-credentials/{{ OPENFORTIVPN.certificate.crtfile }}
+    - source: salt://openfortivpn/files/secrets/{{ OPENFORTIVPN.certificate.crtfile }}
     - mode: 400
     - force: true
     - require:
@@ -20,8 +23,8 @@ openfortivpn-crtfile-present:
 
 openfortivpn-keyfile-present:
   file.managed:
-    - name: /openfortivpn-credentials/{{ pillar['openfortivpn']['certificate']['keyfile'] }}
-    - source: salt://openfortivpn/files/secrets/{{ pillar['openfortivpn']['certificate']['keyfile'] }}
+    - name: /openfortivpn-credentials/{{ OPENFORTIVPN.certificate.keyfile }}
+    - source: salt://openfortivpn/files/secrets/{{ OPENFORTIVPN.certificate.keyfile }}
     - mode: 400
     - force: true
     - require:
@@ -36,7 +39,7 @@ openfortivpn-client-service-running:
       - file: openfortivpn-crtfile-present
       - file: openfortivpn-keyfile-present
 
-{% for src_ipaddr in salt['pillar.get']('openfortivpn:masquerade') %}
+{% for src_ipaddr in OPENFORTIVPN.masquerade %}
 openfortivpn-nat-rule-{{ loop.index }}-present:
   iptables.append:
     - table: nat

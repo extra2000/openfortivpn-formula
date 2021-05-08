@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
+{%- set tplroot = tpldir.split('/')[0] %}
+{%- from tplroot ~ "/map.jinja" import OPENFORTIVPN with context %}
+
 openfortivpn-client-service-dead:
   service.dead:
     - name: openfortivpn@client.service
@@ -13,7 +16,7 @@ openfortivpn-credentials-dir-absent:
   file.absent:
     - name: /openfortivpn-credentials
 
-{% for src_ipaddr in salt['pillar.get']('openfortivpn:masquerade') %}
+{% for src_ipaddr in OPENFORTIVPN.masquerade %}
 openfortivpn-nat-rule-{{ loop.index }}-absent:
   iptables.delete:
     - table: nat
