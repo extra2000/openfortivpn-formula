@@ -12,6 +12,7 @@
     - mkmnt: true
     - persist: false
 
+{% if OPENFORTIVPN.use_certificate %}
 openfortivpn-crtfile-present:
   file.managed:
     - name: /openfortivpn-credentials/{{ OPENFORTIVPN.certificate.crtfile }}
@@ -29,6 +30,7 @@ openfortivpn-keyfile-present:
     - force: true
     - require:
       - mount: /openfortivpn-credentials
+{% endif %}
 
 openfortivpn-client-service-running:
   service.running:
@@ -36,8 +38,10 @@ openfortivpn-client-service-running:
     - enable: false
     - require:
       - mount: /openfortivpn-credentials
+{% if OPENFORTIVPN.use_certificate %}
       - file: openfortivpn-crtfile-present
       - file: openfortivpn-keyfile-present
+{% endif %}
 
 {% for src_ipaddr in OPENFORTIVPN.masquerade %}
 openfortivpn-nat-rule-{{ loop.index }}-present:

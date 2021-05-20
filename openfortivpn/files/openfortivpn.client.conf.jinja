@@ -1,5 +1,12 @@
 host = {{ openfortivpn.server.host }}
 port = {{ openfortivpn.server.port }}
+
+{% if openfortivpn.use_certificate %}
 user-cert = /openfortivpn-credentials/{{ openfortivpn.certificate.crtfile }}
 user-key = /openfortivpn-credentials/{{ openfortivpn.certificate.keyfile }}
+{% else %}
+username = {{ openfortivpn.login.username }}
+password = {{ openfortivpn.login.password }}
+{% endif %}
+
 trusted-cert = {{ openfortivpn.server.certdigest }}
