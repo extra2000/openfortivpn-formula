@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/extra2000/openfortivpn-formula/compare/v2.0.0...v2.1.0) (2021-05-20)
+
+
+### Features
+
+* **pillar:** add support for authentication without certificate (using `username` and `password` only) ([5e41af8](https://github.com/extra2000/openfortivpn-formula/commit/5e41af834ce6868141178c3d1991655f10070767))
+
 ## [2.0.0](https://github.com/extra2000/openfortivpn-formula/compare/v1.1.7...v2.0.0) (2021-05-08)
 
 
